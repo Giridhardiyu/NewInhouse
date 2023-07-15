@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RVU - Inhouse project</title>
+    <link rel="stylesheet" href="newProject.css" class="css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="nav-logo">
+            <img src="https://rvu.edu.in/wp-content/themes/rvu/images/header_logo.svg" alt="rvu-logo" height="100px">
+        </div>
+        <div class="nav-tags">
+            <a href="#">About RVU</a>
+            <a href="#">Academics</a>
+            <a href="#">Blogs</a>
+            <a href="#">Events</a>
+            <a href="#">TIFA 2023</a>
+            <a href="#">Research</a>
+            <a href="#">Contact</a>
+            <a href="#">Careers</a>
+        </div> 
+    </header>
+    <section class="school-sel" id="sch-sel">
+        <form name="form" id="form0">
+            <div class="scl-sch">
+                <div class="grid title">
+                    <h2>EVENTS</h2>
+                </div>
+                <div class="grid labels">
+                    <label for="schools">
+                        Select your school
+                    </label>
+                </div>
+                <div class="grid input-school">
+                    <select class="schools" id="schools">
+                        <option value="">Select your school</option>
+                        <option value="SoCSE">SoCSE - School of Computer Science</option>
+                        <option value="SoB">SoB - School of Business</option>
+                        <option value="SoLAS">SoLAS - School of Liberal arts and science</option>
+                        <option value="SoL">SoL - School of Law</option>
+                        <option value="SoE">SoE - School of Economics</option>
+                        <option value="SoDI">SoDI - School of Design and innovation</option>
+                    </select>
+                </div>
+                <div class="grid labels">
+                    <label for="events">
+                        Choose the type of event you want to add
+                    </label>
+                </div>
+                <div class="grid input-event-list">
+                    <select class="events" id="events">
+                        <option value="">Select type of your event</option>
+                        <option value="Academic Activities organised during the month">Academic Activities organised during the month</option>
+                        <option value="Student and faculty Achievements">Student and faculty Achievements</option>
+                        <option value="Colloborations">Colloborations</option>
+                        <option value="Research & Faculty/ student Publications:">Research & Faculty/ student Publications</option>
+                        <option value="Proffesional activity outside RVU">Proffesional activity outside RVU</option>
+                        <option value="Support for Admission & other Institution building initiatives">Support for Admission & other Institution building initiatives</option>
+                        <option value="Admissions and Outreach">Admissions and Outreach</option>
+                    </select>
+                </div>
+                <div class="grid labels">
+                    <label for="others">
+                        Other event 
+                    </label>
+                </div>
+                <div class="grid input-others">
+                    <input type="text" placeholder="Please Specify" id="others">
+                </div>
+                <div class="grid btn1">
+                    <a href="#" class="btn" onclick="formOpen()">Add Event</a>
+                </div>
+                <div class="grid btn1">
+                    <a href="#" class="btn" onclick="formOpen()">Check Events</a>
+                </div>
+            </div>
+        </form>
+        <form id="form1" for="Academic Activities" onsubmit="event_det(this)" class="form1">
+            <div class="grid-container">
+                <div class="grid1 form-title">
+                    <h3>EVENT DETAILS</h3>
+                    <a href="#" onclick="closeForm()" style="position: absolute;right: 0;font-size: 35px; padding: 10px;"><i style="color: black;"class='bx bx-x-circle'></i></a>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="title-event">
+                        Title of event
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the title of the event here" class="title-event" id="eve-tit" required>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="event-dur">
+                        Date
+                    </label>
+                </div>
+                <div class="grid1 form-inputs ddy">
+                    <input type="date" id="eve-dat1" required><p> to </p><input type="date" id="eve-dat2" required>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="speaker-det">
+                        Speaker / External person
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the name of speakers here" id="eve-spe" required>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="Co-ord">
+                        Coordinators / Course - faculty
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the name of Coordinators here" id="eve-coo" required>
+                </div>
+                <div class="grid1 btn1">
+                    <button type="submit" onsubmit="">Submit</button>
+                </div>
+            </div>
+        </form>
+        <form id="form2" for="Student and faculty Achievements" onsubmit="event_det(this)">
+            <div class="grid-container">
+                <div class="grid1 form-title">
+                    <h3>EVENT DETAILS</h3>
+                    <a href="#" onclick="closeForm()" style="position: absolute;right: 0;font-size: 35px; padding: 10px;"><i style="color: black;"class='bx bx-x-circle'></i></a>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="title-event">
+                        Achievements and recognitions
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the title of the event here" id="eve-achievements" required>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="Co-ord">
+                        Faculty/ Student name
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the name of Coordinators here" id="faculty/student-name" required>
+                </div>
+                <div class="grid1 btn1">
+                    <button type="submit" onsubmit="">Submit</button>
+                </div>
+            </div>
+        </form>
+        <form id="form3" for="Research & Faculty/ student Publications" onsubmit="event_det(this)">
+            <div class="grid-container">
+                <div class="grid1 form-title">
+                    <h3>EVENT DETAILS</h3>
+                    <a href="#" onclick="closeForm()" style="position: absolute;right: 0;font-size: 35px; padding: 10px;"><i style="color: black;"class='bx bx-x-circle'></i></a>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="title-event">
+                        Faculty/Student Name
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the title of the event here" class="title-event" id="eve-fac/stu_name" required>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="event-tit">
+                        Title of Publication
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the title of publication here" id="eve-tit-publication" required>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="speaker-det">
+                        Type of publication
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the type of publication here" id="eve-type-publication" required>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="Co-ord">
+                        Publisher
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter publisher here" id="eve-publisher" required>
+                </div>
+                <div class="grid1 btn1">
+                    <button type="submit" onsubmit="">Submit</button>
+                </div>
+            </div>
+        </form>
+        <form id="form4" for="Other Activities" onsubmit="event_det(this)">
+            <div class="grid-container">
+                <div class="grid1 form-title">
+                    <h3>EVENT DETAILS</h3>
+                    <a href="#" onclick="closeForm()" style="position: absolute;right: 0;font-size: 35px; padding: 10px;"><i style="color: black;"class='bx bx-x-circle'></i></a>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="title-event">
+                        Title of event
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the title of the event here" class="title-event" id="eve-tit" required>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="event-dur">
+                        Date
+                    </label>
+                </div>
+                <div class="grid1 form-inputs ddy">
+                    <input type="date" id="eve-dat1" required><p> to </p><input type="date" id="eve-dat2" required>
+                </div>
+                <div class="grid1 form-labels">
+                    <label for="event-discription">
+                        Description
+                    </label>
+                </div>
+                <div class="grid1 form-inputs">
+                    <input type="text" placeholder="Please enter the description here" id="eve-discription" required>
+                </div>
+                <div class="grid1 btn1">
+                    <button type="submit" onsubmit="">Submit</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="newProject1.js"></script>
+</body>
+</html>
